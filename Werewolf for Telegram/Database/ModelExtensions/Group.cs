@@ -76,5 +76,20 @@ namespace Database
             f &= ~flag;
             Flags = (long)f;
         }
+
+        public bool HasRole(RoleConfig flag)
+        {
+            if (RoleFlags == null) RoleFlags = 0;
+            var f = (RoleConfig)RoleFlags;
+            return f.HasFlag(flag);
+        }
+
+        public void ToggleRole(RoleConfig flag)
+        {
+            if (RoleFlags == null) RoleFlags = 0;
+            var f = (RoleConfig)RoleFlags;
+            f ^= flag;
+            RoleFlags = (long)f;
+        }
     }
 }

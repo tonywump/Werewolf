@@ -809,6 +809,12 @@ namespace Werewolf_Control.Handler
                     string[] args = query.Data.Split('|');
                     Program.Analytics.TrackAsync($"cb:{args[0]}", new { args = args }, query.From.Id.ToString());
 
+                    if (args[0] == "dummy")
+                    {
+                        Bot.ReplyToCallback(query);
+                        return;
+                    }
+
                     if (args[0] == "donatetg")
                     {
                         Commands.GetDonationInfo(query);
@@ -1704,6 +1710,46 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("ThankYou", language));
                             break;
+                        case "roleonoff":
+                            var rolesOnOff = Enum.GetValues(typeof(RoleConfig)).Cast<RoleConfig>().Where(x => x.IsEditable());
+                            var roles = grp.RoleFlags == null ? RoleDefaults.LoadDefaults() : (RoleConfig)grp.RoleFlags;
+
+                            if (choice == "done")
+                            {
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                                return;
+                            }
+
+                            if (choice != "") // toggle a role
+                            {
+                                roles = roles.Toggle(rolesOnOff.FirstOrDefault(x => x.GetInfo().ShortName == choice));
+                                grp.RoleFlags = (long)roles;
+                                DB.SaveChanges();
+                            }
+
+                            buttons.Clear();
+                            foreach (var role in rolesOnOff)
+                            {
+                                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(role.GetInfo().Emoji, language), "dummy"));
+#if !DEBUG
+                                buttons.Add(new InlineKeyboardCallbackButton(roles.HasFlag(role) == true ? GetLocaleString("Tick", language) : GetLocaleString("Cross", language), $"roleonoff|{groupid}|{role.GetInfo().ShortName}"));
+#else
+                                buttons.Add(new InlineKeyboardCallbackButton(roles.HasFlag(role) == true ? "✔️" : "❌", $"roleonoff|{groupid}|{role.GetInfo().ShortName}"));
+#endif
+                            }
+                            var rolesMenu = new List<InlineKeyboardButton[]>();
+                            for (var i = 0; i < buttons.Count; i += 4)
+                            {
+                                rolesMenu.Add(buttons.Skip(i).Take(4).ToArray());
+                            }
+                            rolesMenu.Add(new[] { new InlineKeyboardCallbackButton(Cancel, $"roleonoff|{groupid}|done") });
+
+                            menu = new InlineKeyboardMarkup(rolesMenu.ToArray());
+                            if (choice != "")
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId, menu);
+                            else
+                                Bot.ReplyToCallback(query, replyMarkup: menu);
+                            break;
                         default:
                             //check the statement against various flags to see if it a boolean group setting.  If so, build out the response.
                             var settings = Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>()
@@ -1769,7 +1815,7 @@ namespace Werewolf_Control.Handler
                             }
 
                             break;
-                            #endregion
+#endregion
                     }
                 }
                 catch (Exception ex)
@@ -1897,8 +1943,8 @@ namespace Werewolf_Control.Handler
             buttons.Add(new InlineKeyboardCallbackButton("Change Language", $"lang|{id}"));
             buttons.Add(new InlineKeyboardCallbackButton("Change Game Mode", $"mode|{id}"));
             //buttons.Add(new InlineKeyboardCallbackButton("Show Roles On Death", $"roles|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Show Roles At Game End", $"endroles|{id}"));
-            buttons.Add(new InlineKeyboardCallbackButton("Allow Fleeing", $"flee|{id}")); //TODO add
+            //buttons.Add(new InlineKeyboardCallbackButton("Show Roles At Game End", $"endroles|{id}"));
+            //buttons.Add(new InlineKeyboardCallbackButton("Allow Fleeing", $"flee|{id}")); //TODO add
             //buttons.Add(new InlineKeyboardCallbackButton("Allow Extending Timer", $"extend|{id}"));
             buttons.Add(new InlineKeyboardCallbackButton("Set Max Players", $"maxplayer|{id}"));
             buttons.Add(new InlineKeyboardCallbackButton("Set Max Extend Time", $"maxextend|{id}"));
@@ -1915,6 +1961,7 @@ namespace Werewolf_Control.Handler
                 //get the flag, determine the shortname and make a button out of it.
                 buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(flag.ToString(), GetLanguage(id)), $"{flag.GetInfo().ShortName}|{id}"));
             }
+            buttons.Add(new InlineKeyboardCallbackButton("Roles On/Off", $"roleonoff|{id}"));
 
             buttons.Add(new InlineKeyboardCallbackButton("Done", $"done"));
             var twoMenu = new List<InlineKeyboardButton[]>();
