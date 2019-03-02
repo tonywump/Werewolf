@@ -47,6 +47,9 @@
 
     Typos fixed:
     GuardEmptyHouse*
+
+2019/02/03
+  Update translation released on 28th Dec 2018
   -->
   <string key="NotInGame">
     <value>你現在似乎並不在任何遊戲裡...</value>
@@ -1670,5 +1673,169 @@
   </string>
   <string key="AboutThief">
     <value>晚上選擇一個玩家 偷取其腳色 , 這名玩家將會成為新的職業小偷, 並可於次晚 偷取 其他玩家腳色. 如果遊戲結束你還是小偷, 那你輸掉該局.</value>
+  </string>
+
+  <!-- New roles 28.12.2018 -->
+ <string key="Troublemaker">
+	<value>搗蛋鬼🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+    <value>搗蛋鬼是鎮上肆虐的少年。當他們開始大喊大叫時，整個村莊都吵起來。為了獲得沉默，那天他們會投票兩次！</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+    <value>你是搗蛋鬼🤯。作為村里的少年，你處於青春期的邊緣。有一天，當你對所有事情感到特別惱火的時候，你可能會引起巨大的轟動，而那個村莊將會在那天投票兩次。</value>
+  </string>
+  <string key="AskTroublemaker">
+    <value>你今天想要搗蛋嗎？</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+    <value> {0}，搗蛋鬼🤯正在搗蛋！跑來跑去，滿心歡呼！你今天會投票兩次！</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+    <value>因為搗蛋鬼，你們今天要投票兩次！希望他明天會安靜。</value>
+  </string>
+  <string key="Chemist">
+    <value>化學家👨🔬</value>
+  </string>
+  <string key="AboutChemist">
+    <value>化學家是一個非常瘋狂的人，喜歡製造藥水並搞砸他們。他們製造了兩種藥水，迫使其他人選擇一種飲用，而化學家會喝另一種。然而，雖然一種魔藥只是像玫瑰花蕾一樣品嚐，但另一種藥物會立即殺死你。祝他們拜訪你好運！</value>
+  </string>
+  <string key="RoleInfoChemist">
+    <value>你是化學家👨🔬！你對有毒的藥水充滿濃厚的興趣，作為一種愛好你喜歡和你的生命作賭博...只是有一個問題！你釀造了兩種藥水，其中一種是有毒的，另一種是中性的，看起來完全一樣。每隔一個晚上，你可以選擇一個玩家並強迫他們和你一起喝藥水，也許他們很幸運並且活下來。但是，如果你的對象選擇好喝的話，你就會得到有毒的藥水而死亡。祝你好運！</value>
+  </string>
+  <string key="ChemistBrewing">
+    <value>當其他村民上床睡覺時，你仍然在你的實驗室裡，將藥水調配到第二天晚上。確保不要被狼抓住！</value>
+  </string>
+  <string key="AskChemist">
+    <value>今晚誰會成為你的賭博對象？</value>
+  </string>
+  <string key="ChemistTargetDead">
+    <value>你去了{0}的房子和他一起喝藥水，然而，當你到達那裡時，他已經死了！</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+    <value>你被化學家{0}訪問過！他們拔出一把刀迫使你喝藥水，但是你沒有喝藥水，而是拿出自己的刀。顯然，你的刀更強🤷♂️</value>
+  </string>
+  <string key="ChemistSK">
+    <value>你去{0}家裏讓他選擇藥水，然而，他是連環殺手並且刺傷了你！ 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+    <value>化學家👨🔬{0}試圖逼迫連環殺手今晚參加比賽。看起來連環殺手不喜歡玩遊戲... {0}被發現，被刺傷，還有兩瓶藥水仍在他們的包裡！</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+    <value>你被化學家訪問了，他強迫你選擇藥水而你選擇了有毒的藥水。離開這個世界真是太可悲了...... </value>
+  </string>
+  <string key="ChemistSuccess">
+    <value>您訪問過{0}並讓他們選擇藥水！他們選擇了有毒的，你回到家裡，對你的賭博技巧感到滿意。這不是機會遊戲！</value>
+  </string>
+
+
+
+  <string key="ChemistSuccessPublic">
+    <value>化學家今晚訪問了{0} 他選擇了有毒的藥水！當瘋狂的化學家還活著的時候，{0}就死了。 {1} </value>
+  </string>
+  <string key="ChemistVisitYouFail">
+    <value>你被化學家👨🔬{0}訪問過，他強迫你選擇藥水。經過片刻的猶豫，你選擇了一個好的！幸運的你！</value>
+  </string>
+  <string key="ChemistFail">
+    <value>您訪問過{0}並讓他選擇藥水！然而他選擇了好的！結果，你喝了有毒的並死了。也許你應該做得更好...... </value>
+  </string>
+  <string key="ChemistFailPublic">
+    <value>化學家👨🔬{0}被發現死了！顯然，{0}運氣不好，在夜間訪問期間喝了有毒藥水！求你永遠不要從他那裡買藥...... </value>
+  </string>
+  <string key="ChemistTargetEmpty">
+    <value> {0}不在家！你把行李箱拖回家，詛咒你的運氣不好。</value>
+  </string>
+  <string key="CultistsList">
+    <value>邪教成員目前有：{0} </value>
+  </string>
+
+   <string key="SnowWolf">
+    <value>雪狼🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+      <value>你是雪狼🐺☃️。每天晚上，你不是跟著你的同類去追捕別人，而是自己躲起來凍死一個人。凍結的人如果不能作出任何夜間。但是，您的對象第二天晚上會有一些抵抗力，所以不能連續第二次凍結。</value>
+  </string>
+  <string key="AboutSnowWolf">
+      <value>雪狼🐺☃️是一種原產於村莊附近白雪山脈的狼。因此，他們掌握了控製冰雪的能力。雪狼獨自生活了很長時間，喜歡獨自經營。他不會在晚上用他們的同類打獵，而是選擇一個單獨的受害者來凍結，這導致受害者無法在夜間行動。然而，他們仍然會在第二天晚上留下一些對雪狼的抵抗力，使他們對雪狼免疫一晚。 </value>
+  </string>
+  <string key="AskFreeze">
+    <value>今晚你想凍結誰？</value>
+  </string>
+  <string key="WolfPackList">
+      <value>狼群有{0} </value>
+  </string>
+  <string key="WolfPackSnowList">
+      <value>狼群由{0}和雪狼{1} 組成</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+      <value> {0}已經死了，你變成了一隻狼王。你的隊友是：{1}和雪狼{2} </value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+      <value> {0}已經死了，你變成了狼人。你的隊友是：{1}和雪狼{2} </value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+      <value> {0}已經死了，你變成了狼人。你的隊友是：{1}和雪狼{2} </value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+      <value> {0}已經死了，你變成了狼人。你的隊友是：{1}和雪狼{2} </value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+      <value> {0}已經死了，你變成了雪狼。你的隊友（如果有的話）是：{1} </value>
+  </string>
+  <string key="DGToSnowWolf">
+      <value>現在，模仿者 {0}已成為新的雪狼！</value>
+  </string>
+  <string key="WildChildSnowTransform">
+      <value> {0}已經死了！在你的憤怒中，你已成為狼人！你的新隊友是：{1}和雪狼{2} </value>
+  </string>
+  <string key="ThiefToSnowWolf">
+      <value> {0}不再是你的隊友，{1}現在已成為新的雪狼！</value>
+  </string>
+  <string key="HarlotFrozen">
+      <value>當你打開門離開你的房子時，一陣風吹向你，你在路途上被凍結了🐺☃️。你凍結在門口，默默地咒罵這種奇怪的束縛。好吧，謝天謝地，你現在解凍了。 </value>
+  </string>
+  <string key="ChemistFrozen">
+      <value>當你在晚上醒來，準備拿取藥水時，一陣強風從窗戶吹來，導致你凍結🐺☃️。從你的眼角，你看到你的藥水瓶被破壞了。看起來他們也沒有逃脫凍結的能力。你心裡嘆了口氣，希望太陽能早點出現......不過你現在已經解凍好了</value>
+  </string>
+  <string key="CultistFrozen">
+      <value>當你穿上斗篷並準備離開你的房子時，一陣風從門口吹來，導致你凍結🐺☃️。不久之後，你的邪教組織成員將你帶到邪教徒面前，他們還嘲笑你。把你留在門口後，他們答應他們今晚會做好工作。你已經解凍了，離開了房子，尷尬地屈縮在一旁。 </value>
+  </string>
+  <string key="CHFrozen">
+      <value>當你抓住你的劍時，一陣風從窗戶吹來，導致你凍結🐺☃️。你無聲地呻吟，你的四肢因為處於這個位置而感到疼痛直到現在...... </value>
+  </string>
+
+
+  <string key="SeeingFrozen">
+      <value>當你坐在桌邊，準備好使用你的精神力量時，一陣風從窗戶吹來，導致你凍結🐺☃️。雖然受束縛通常不是問題，但凍結法術也會給你一個嚴重的腦凍結影響。你並不擔心，因為知道太陽升起時你會回復正常，你現在將被解凍。 </value>
+  </string>
+  <string key="GAFrozen">
+      <value>當你的翅膀出現時，一陣風從窗戶吹來，導致你凍結🐺☃️。當你突然想像自己是聖誕樹上的裝飾品時，你內心地畏縮了。值得慶幸的是，自太陽升起之後，現在已經回復正常了。 </value>
+  </string>
+  <string key="SKFrozen">
+      <value>當你離開家時最後一次欣賞你的收藏時，一陣風從窗戶吹來，玻璃罐子結霜......你也被凍結了。當你今天早上張開牙齒時，你會因為雪狼的能力而煩惱地咬牙切齒，發誓當你吃肝臟時盡可能地讓他們受苦。 </value>
+  </string>
+  <string key="ThiefFrozen">
+      <value>當你在村莊周圍悶悶不樂時，你會感受到強烈的陣風。你在路途上被凍結了，完全無法移動🐺☃️。幸運的是，晚上天氣很黑，你不會在那天晚上經過你的人認出你來。當天亮時完全解凍後，在任何人看到你之前，你都已經跑回家了。 </value>
+  </string>
+
+
+
+  <string key="DefaultFrozen">
+      <value>當你昨晚睡覺的時候，你突然覺得很冷。醒來檢查，你意識到你根本無法移動！看起來像雪狼🐺☃️已經給你施了一個凍結的咒語。你回去睡覺，不關心，因為它根本不會影響你...除了讓你感到寒冷。</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+      <value>你前往{0}的房子凍結它們，但是你會遇到一個高大的黑暗身影，穿起整套武裝。守護天使會和你戰鬥，你會被擊敗。</value>
+  </string>
+  <string key="SuccessfulFreeze">
+      <value>你去了{0}的房子並凍結了他們！今晚，他們將無法使用他們的夜間行動（如果有的話）。</value>
+  </string>
+  <string key="SnowFrozeKiller">
+    <value>雪狼{0}昨晚試圖凍結某人，但不小心探訪了連環殺手！殺手注意到了不受歡迎的訪客並刺傷了{0}！</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+    <value>當所有其他狼都死了，你就是剩下的最後一部分！為了獲得一些新鮮的村民肉，你決定從現在開始變成一個正常的狼人，晚上獵食而不是使用冷凍能力！</value>
+  </string>
+  <string key="SnowFrozeHunter">
+      <value>雪狼{0}昨晚試圖凍結獵人，但是獵人能夠抓住他們並用步槍將他們擊倒！</value>
   </string>
 </strings>
